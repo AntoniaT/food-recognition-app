@@ -1,0 +1,48 @@
+.form{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 30vw;
+    display: block;
+    margin: auto;
+    background-color: #EEF8F8;
+    margin-top: 200px;
+    color: #0F6464;
+}
+.signInCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signInCont input{
+    width: 250px;
+    height: 30px;
+    display: inline-block;
+    margin: auto;
+    border-radius: 100px;
+    border: none;
+    margin-top: .8em;
+}
+@media screen and (max-width: 600px) {
+    .form{
+        width: 70vw; 
+        margin-top: 100px; 
+    }
+    .signInCont input{
+        width: 170px;
+
+    } 
+}
+.signInBtn{
+    background-color:#0F6464;
+    color: #fff;
+    border-radius: 100px;
+    font-size: 1em;
+    width: 120px;
+    height: 30px;
+    margin-top: 1em;
+}
+.registerLink{
+}
+.registerLink:hover{
+    color: #fff;
+}

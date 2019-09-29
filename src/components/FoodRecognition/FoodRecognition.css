@@ -1,0 +1,37 @@
+.foodRecognCont{
+    display: block;
+    overflow: scroll;
+}
+.foodImg{
+    margin: 2em;
+    width: 300px;
+    height: auto;
+}
+.tagCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.hide{
+    display: none;
+}
+.foodTags{
+    border-radius: 20px;
+    background-color: transparent;
+    border: .5px solid #0F6464;
+    width: 100px;
+    color: #0F6464;
+    margin: 0px 10px 20px 10px;
+    padding: 5px;
+}
+@media screen and (max-width: 600px) {
+    .foodImg{
+        width: 300px;
+        height: auto;
+        margin: auto;
+        display: block;
+        padding: 1em;
+    }
+}

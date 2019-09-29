@@ -1,0 +1,20 @@
+import React from 'react';
+import './FooterNav.css';
+import homeIcon from './homeIcon.png';
+import historyIcon from './historyIconG.png';
+import profileIcon from './profileIconG.png';
+
+const FooterNav = () => {
+    return (
+        <div>
+            <footer className="footerNav">
+                 <img className="icons" src={homeIcon} alt="nav icon"/>
+                 <img className="icons" src={historyIcon} alt="nav icon"/>
+                 <img className="icons" src={profileIcon} alt="nav icon"/>
+
+            </footer>
+        </div>
+    );
+}
+
+export default FooterNav;

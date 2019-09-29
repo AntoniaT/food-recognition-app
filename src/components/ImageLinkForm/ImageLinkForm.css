@@ -1,0 +1,57 @@
+/* COLORS:
+#0D2337
+#0F6464
+#5DC0C1
+#A6E5E6
+#FEF76E
+*/
+.detectText{
+    padding: 0 30px 0 30px;
+}
+.ImageLinkCont{
+    margin: auto;
+    display: block;
+    color: #0F6464;
+}
+.detectInpt{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 20vw;
+    border: none;
+    font-size: .8em;
+    color: gray;
+    -webkit-border-top-left-radius: 100px;
+    -webkit-border-bottom-left-radius: 100px;
+    -moz-border-radius-topleft: 100px;
+    -moz-border-radius-bottomleft: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.detectBtn{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 50px;
+    background-color:#0F6464;
+    font-size: 1.3em;
+    color: #fff;
+    border: none;
+    -webkit-border-top-right-radius: 100px;
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-topright: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.detectBtn:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width: 600px) {
+    .detectInpt{
+        height: 40px;
+        width: 200px;
+    }
+    .detectBtn{
+        width: 100px;
+        height: 40px;
+    }
+}

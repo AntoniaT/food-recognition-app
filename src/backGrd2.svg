@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fef76e;
+      }
+    </style>
+  </defs>
+  <title>backGrd2</title>
+  <g id="wavy_background" data-name="wavy background">
+    <path class="cls-1" d="M0,361s189-111,343-49,249.89,33,250,33c32-9.65,62.58-20.24,91.72-37.17,83.81-48.69,125.17-143.89,232.2-149.43,93.09-4.83,125.69,76.65,121.08,158V768H0Z"/>
+  </g>
+</svg>

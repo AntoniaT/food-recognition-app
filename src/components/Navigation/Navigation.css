@@ -1,0 +1,41 @@
+/* COLORS:
+#0D2337
+#0F6464
+#5DC0C1
+#A6E5E6
+#FEF76E
+#EEF8F8
+
+*/
+
+.navCont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F6F6F6;
+    color: #0F6464;
+}
+.navSignOut{
+   margin-right: 2em; 
+   margin-left: 2em;
+   cursor: pointer;
+   justify-self: flex-end;
+}
+.navSignOut:hover{
+    transition: .4;
+    transform: scale(1.2);
+}
+.logo{
+    width: 100px;
+    padding: 1em 2em;
+}
+.logoCont{
+    display: flex;
+}
+.logoIcon{
+    margin-left: 2em;
+    margin-top: .5em;
+    width: auto;
+    height: 40px;
+    justify-self: flex-start;
+}
