@@ -26,11 +26,17 @@
     transform: scale(1.2);
 }
 .logo{
-    width: 100px;
-    padding: 1em 2em;
+    width: 40vw;
+    margin-top: 20px;
+}
+@media screen and (max-width: 600px) {
+    .logo{
+        width: 80vw;
+    }
 }
 .logoCont{
     display: flex;
+    justify-content: flex-end;
 }
 .logoIcon{
     margin-left: 2em;

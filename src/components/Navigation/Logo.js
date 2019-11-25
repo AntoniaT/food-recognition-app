@@ -1,11 +1,11 @@
 import React from 'react';
 import './Navigation.css';
-import logo from './logo.png';
+import WelcomeDesign from './app-bgrd.png';
 
 const Logo = () => {
     return (
         <div className="logoCont">
-            <img className="logo" src={logo} alt="logo"/>
+            <img className="logo" src={WelcomeDesign} alt="logo"/>
         </div>
     );
 }
