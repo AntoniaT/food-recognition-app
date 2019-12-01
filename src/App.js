@@ -13,24 +13,25 @@ import FooterNav from './components/FooterNav/FooterNav';
 const app = new Clarifai.App({
   apiKey: 'c0f271bd3ec340bc84e08b587ce502f9'
  });
-
+const initialState = {
+    input: '',
+    imageUrl: '',
+    foodTags: [],
+    route: 'signin',
+    isSignedIn: false,
+    user: {
+      id: '',
+      name: '',
+      email: '',
+      entries: 0,
+      joined: ''
+}
+}
 class App extends React.Component {
   constructor(){
    super();
-    this.state = {
-      input: '',
-      imageUrl: '',
-      foodTags: [],
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: '' 
-      }
-    }
+    this.state = initialState;
+    
   }
   loadUser = (data) => {
     this.setState({user: {
@@ -52,19 +53,13 @@ class App extends React.Component {
      const foodTag6 = data.outputs[0].data.concepts[5].name;
 
      this.setState({foodTags: [foodTag1, foodTag2, foodTag3, foodTag4, foodTag5, foodTag6] })
-
-  //   const image = document.getElementById('imputImage');
-   //  const width = Number(image.width);
-   //  const height = Number(image.height);
     };
     onInputChange = (event) =>{
       this.setState({input: event.target.value});
     }
     onButtonSubmit = () =>{
       this.setState({imageUrl: this.state.input})
-/*       const tester = document.getElementById('testP');
-      tester.classList.remove('hide');
- */
+
       app.models.predict(
         Clarifai.FOOD_MODEL, 
         this.state.input)
@@ -81,6 +76,7 @@ class App extends React.Component {
           .then(count =>{
             this.setState(Object.assign(this.state.user, { entries: count}))
           })
+          .catch(console.log)
         }
           this.calculateFoodTags(response)
         })
@@ -89,7 +85,7 @@ class App extends React.Component {
 
   onRouteChange = (route) => {
     if (route === 'signout') {
-      this.setState({isSignedIn: false})
+      this.setState(initialState)
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
