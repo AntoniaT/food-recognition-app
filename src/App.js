@@ -8,7 +8,6 @@ import Rank from './components/Rank/Rank';
 import FoodRecognition from './components/FoodRecognition/FoodRecognotion';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
-
 import FooterNav from './components/FooterNav/FooterNav';
 
 const app = new Clarifai.App({
@@ -22,7 +21,7 @@ class App extends React.Component {
       input: '',
       imageUrl: '',
       foodTags: [],
-      route: 'signIn',
+      route: 'signin',
       isSignedIn: false,
       user: {
         id: '',
@@ -33,14 +32,14 @@ class App extends React.Component {
       }
     }
   }
-  loadUser = (data) =>{
-     this.setState({user: {
+  loadUser = (data) => {
+    this.setState({user: {
       id: data.id,
       name: data.name,
       email: data.email,
       entries: data.entries,
-      joined: data.joined 
-     }})
+      joined: data.joined
+    }})
   }
 
     calculateFoodTags = (data) =>{
@@ -63,58 +62,56 @@ class App extends React.Component {
     }
     onButtonSubmit = () =>{
       this.setState({imageUrl: this.state.input})
-      const tester = document.getElementById('testP');
+/*       const tester = document.getElementById('testP');
       tester.classList.remove('hide');
-
+ */
       app.models.predict(
         Clarifai.FOOD_MODEL, 
-        this.state.input
-        )
+        this.state.input)
         .then(response => {
           if(response){
              fetch('http://localhost:3000/image', {
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
-                  id: this.state.user.id
-             })
+                id: this.state.user.id
+              })
           })
           .then(response => response.json())
           .then(count =>{
-            this.setState(Object.assign(this.state.user, {entries: count}))
+            this.setState(Object.assign(this.state.user, { entries: count}))
           })
         }
           this.calculateFoodTags(response)
         })
-        .catch(err => console.log(err)); 
-      
+        .catch(err => console.log(err));      
     }
-    onRouteChange = (route) => {
-      if (route === 'signout') {
-        this.setState({isSignedIn: false})
-      } else if (route === 'home') {
-        this.setState({isSignedIn: true})
-      }
-      this.setState({route: route});
+
+  onRouteChange = (route) => {
+    if (route === 'signout') {
+      this.setState({isSignedIn: false})
+    } else if (route === 'home') {
+      this.setState({isSignedIn: true})
     }
+    this.setState({route: route});
+  }
       render(){
       const {isSignedIn, imageUrl, route} = this.state;
+
       return (
         <div className="App">
-        <Navigation 
-        onRouteChange={this.onRouteChange}
-        isSignedIn={isSignedIn}/>
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
 
-        { route === 'home' 
+        { route === 'home'
         ? <div className="backGrd">
-                <Logo />
                 <Rank 
                  name={this.state.user.name}
-                 etries={this.state.user.entries}/>
+                 entries={this.state.user.entries}/>
+
                 <ImageLinkForm 
                 onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-                />
+                onButtonSubmit={this.onButtonSubmit}/>
+
                 <FoodRecognition 
                 imageUrl={imageUrl}
                 foodTags={this.state.foodTags}/>
@@ -122,16 +119,21 @@ class App extends React.Component {
           </div>
         
         : ( 
-          route === 'signIn' 
-        ? <SignIn
+          route === 'signin'
+          ? <div>
+            <SignIn
             loadUser={this.loadUser} 
-            onRouteChange={this.onRouteChange}
-            />
-        : <Register 
-            loadUser={this.loadUser}
-            onRouteChange={this.onRouteChange}
-          />)
+            onRouteChange={this.onRouteChange}/>
+            <Logo/>
+            </div>
 
+        : <div>
+          <Register 
+            loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}/>
+            <Logo/>
+          </div>
+          )
         }
         </div>
       );

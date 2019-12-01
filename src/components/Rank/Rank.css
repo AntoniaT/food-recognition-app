@@ -1,8 +1,12 @@
 .rankNbr{
     font-size: 2em;
     color: #0F6464;
-
 }
 .rank{
     color: #0F6464;
+}
+@media screen and (max-width: 600px) {
+    .rankNbr{
+        font-size: 1.4em;
+    }   
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css';
-import WelcomeDesign from './app-bgrd.png';
+import WelcomeDesign from './SVG/logo.svg';
 
 const Logo = () => {
     return (

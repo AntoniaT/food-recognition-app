@@ -19,32 +19,33 @@ class Register extends React.Component {
     onPasswordChange = (event) =>{
         this.setState({password: event.target.value})
     }
-    onSubmitSignIn = () =>{
+    onSubmitSignIn = () => {
         fetch('http://localhost:3000/register', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password,
-                name: this.state.name
-            })
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            email: this.state.email,
+            password: this.state.password,
+            name: this.state.name
+          })
         })
-            .then(response => response.json())
-            .then(user => {
-                if (user){
-                    this.props.loadUser(user)
-                    this.props.onRouteChange('home');
-                }
-                })
-        }
+          .then(response => response.json())
+          .then(user => {
+            if (user) {
+              this.props.loadUser(user)
+              this.props.onRouteChange('home');
+            }
+          })
+      }
     render() {
     return (
         <article className="form">
            <h1>Register</h1>
-           <form className="signInCont">
+           <div className="signInCont">
 
-             <label htmlFor="email">Name</label>
+             <label htmlFor="name">Name</label>
              <input 
+             className="signInInput"
              type="text"
              name="name"
              onChange={this.onNameChange}>
@@ -52,6 +53,7 @@ class Register extends React.Component {
 
              <label htmlFor="email">Email</label>
              <input 
+             className="signInInput"
              type="text"
              name="email"
              onChange={this.onEmailChange}>
@@ -59,6 +61,7 @@ class Register extends React.Component {
 
              <label htmlFor="password">Password</label>
              <input 
+             className="signInInput"
              type="text"
              name="password"
              onChange={this.onPasswordChange}>
@@ -70,7 +73,7 @@ class Register extends React.Component {
              value="Register"
              onClick={this.onSubmitSignIn}
              />
-           </form>
+           </div>
         </article>
     );
   }

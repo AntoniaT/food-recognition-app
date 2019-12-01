@@ -27,6 +27,7 @@ class SignIn extends React.Component{
         })
           .then(response => response.json())
           .then(user => {
+            console.log(user)
             if (user.id) {
               this.props.loadUser(user)
               this.props.onRouteChange('home');
@@ -39,14 +40,16 @@ class SignIn extends React.Component{
         return (
             <article className="form">
             <h1>Sign in</h1>
-            <form className="signInCont">
+            <div className="signInCont">
                 <label htmlFor="email">Email</label>
                 <input 
+                    className="signInInput"
                     onChange={this.onEmailChange}
                     type="text">
                 </input>
                 <label htmlFor="password">Password</label>
                 <input 
+                    className="signInInput"
                     onChange={this.onPasswordChange}
                     type="text">
                 </input>
@@ -56,7 +59,7 @@ class SignIn extends React.Component{
                 value="Sign in"
                 onClick={this.onSubmitSignIn}
                 />
-            </form>
+            </div>
             <p 
             className="registerLink" 
             onClick={() => onRouteChange('register')}

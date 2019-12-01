@@ -1,10 +1,7 @@
 /* COLORS:
-#0D2337
-#0F6464
-#5DC0C1
-#A6E5E6
-#FEF76E
-#EEF8F8
+#7cbc57 light green
+#2a3b30 dark green 
+#ecf1f1 grey
 
 */
 
@@ -12,8 +9,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: #F6F6F6;
-    color: #0F6464;
+    background-color: #7cbc57;
+    color: #2a3b30;
 }
 .navSignOut{
    margin-right: 2em; 
