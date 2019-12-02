@@ -1,5 +1,5 @@
 import React from 'react';
-import Clarifai from 'clarifai';
+//import Clarifai from 'clarifai';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Navigation/Logo';
@@ -10,9 +10,9 @@ import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import FooterNav from './components/FooterNav/FooterNav';
 
-const app = new Clarifai.App({
+/* const app = new Clarifai.App({
   apiKey: 'c0f271bd3ec340bc84e08b587ce502f9'
- });
+ }); */
 const initialState = {
     input: '',
     imageUrl: '',
@@ -59,10 +59,14 @@ class App extends React.Component {
     }
     onButtonSubmit = () =>{
       this.setState({imageUrl: this.state.input})
-
-      app.models.predict(
-        Clarifai.FOOD_MODEL, 
-        this.state.input)
+        fetch('http://localhost:3000/imageurl', {
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            input: this.state.input
+          })
+        })
+        .then(response => response.json())
         .then(response => {
           if(response){
              fetch('http://localhost:3000/image', {
@@ -80,8 +84,8 @@ class App extends React.Component {
         }
           this.calculateFoodTags(response)
         })
-        .catch(err => console.log(err));      
-    }
+        .catch(err => console.log(err))     
+        }
 
   onRouteChange = (route) => {
     if (route === 'signout') {

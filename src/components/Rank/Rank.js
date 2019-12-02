@@ -3,13 +3,10 @@ import './Rank.css';
 
 const Rank = ({name, entries}) => {
     return (
-        <div>
+        
         <div className="">
-            <p className="rank">{`Hi ${name}, nice to have you here!`}</p>
-        </div>
-        <div className="rankNbr">
-            <p className="rank">{`Your current rank is #${entries}`}</p>
-        </div>
+            <p className="rankName">{`Hi ${name},`}</p>
+            <p className="rankNbr">{`your current rank is #${entries}`}</p>
         </div>
     );
 }

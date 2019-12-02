@@ -2,16 +2,20 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 80px;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1em;
     background-color: #ecf1f1;
 }
 .icons{
-    width: 40px;
+    width: 35px;
     height: auto;
     margin: 10px 40px;
+}
+.profile-icon{
+    width: 30px;
+    height: auto;
+    margin: 10px 40px;  
 }
 .icons:hover{
     transform: scale(1.2);

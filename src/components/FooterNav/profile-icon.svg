@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.71 74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #d3d3d3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>profile-icon</title>
+  <g id="Ebene_2" data-name="Ebene 2">
+    <g id="Icons_Footer" data-name="Icons Footer">
+      <g>
+        <circle class="cls-1" cx="33.86" cy="20.5" r="18.5"/>
+        <path class="cls-1" d="M65.71,72A31.86,31.86,0,0,0,2,72Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

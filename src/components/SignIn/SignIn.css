@@ -50,7 +50,7 @@ label{
     height: 30px;
     margin-top: 1em;
     cursor: pointer;
-
+    border: none;
 }
 .registerLink{
 }

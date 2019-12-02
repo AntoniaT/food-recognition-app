@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 74.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #2a3b30;
+        stroke-width: 4px;
+      }
+
+      .cls-1 {
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>home-icon</title>
+  <g id="Ebene_2" data-name="Ebene 2">
+    <g id="Icons_Footer" data-name="Icons Footer">
+      <g>
+        <polygon class="cls-1" points="73 29 61.5 29 61.5 72.5 14.5 72.5 14.5 29 2 29 37.32 2 73 29"/>
+        <path class="cls-2" d="M47.19,72.5v-17a9,9,0,0,0-18,0v17Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
